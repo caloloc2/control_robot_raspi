@@ -5,6 +5,7 @@ GPIO.setup(5, GPIO.OUT) ## GPIO 5 como salida
 GPIO.setup(6, GPIO.OUT) ## GPIO 6 como salida
 GPIO.setup(13, GPIO.OUT) ## GPIO 13 como salida
 
+GPIO.setup(27, GPIO.IN) ## GPIO 27 como entrada
 GPIO.setup(22, GPIO.IN) ## GPIO 22 como entrada
 GPIO.setup(10, GPIO.IN) ## GPIO 10 como entrada
 GPIO.setup(9, GPIO.IN) ## GPIO 9 como entrada
@@ -43,6 +44,10 @@ try:
             if (lee(22)): # sensor central
                 time.sleep(sensors[2])
                 activa(13)
+                learn(2)
+            if (lee(27)): # boton               
+                learn(0)
+                learn(1)
                 learn(2)
             tipo = lee(11)
             time.sleep(0.02)
