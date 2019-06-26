@@ -20,6 +20,10 @@ def activa(pin):
 def lee(pin):
     return GPIO.input(pin)
 
+def learn(pos):
+    if (sensors[pos]>0):
+        sensors[pos]-=0.2
+
 tipo = False # False:manual - True:automatico (se lee desde el GPIO 11)
 sensors = [3,3,3]
 
@@ -31,7 +35,7 @@ try:
             if (lee(9)): # sensor izquierdo
                 time.sleep(sensors[0])
                 activa(5)
-                sensors[0]-=0.2
+                learn(0)
             tipo = lee(11)
             time.sleep(0.02)
         print "Modo Manual"
