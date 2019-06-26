@@ -12,23 +12,30 @@ GPIO.setup(11, GPIO.IN) ## GPIO 11 como entrada
 
 # definicion de funciones
 
-def activa(pin, estado):
-    GPIO.output(pin, estado)
+def activa(pin):
+    GPIO.output(pin, True)
+    time.sleep(0.1)
+    GPIO.output(pin, False)
 
 def lee(pin):
     return GPIO.input(pin)
 
 tipo = False # False:manual - True:automatico (se lee desde el GPIO 11)
+sensors = [3,3,3]
 
 try:
     while(True):
         tipo = lee(11)
         while(tipo):
             print "Modo Automatico"
-
+            if (lee(9)): # sensor izquierdo
+                time.sleep(sensors[0])
+                activa(5)
+                sensors[0]-=0.2
             tipo = lee(11)
-            time.sleep(0.1)
+            time.sleep(0.02)
         print "Modo Manual"
+        time.sleep(0.02)
 except KeyboardInterrupt:
     print "chao"
     GPIO.cleanup()
