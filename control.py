@@ -24,7 +24,9 @@ try:
     while(True):
         tipo = lee(11)
         while(tipo):
-            print "automatico"   
+            print "automatico"
+            
+            tipo = lee(11)
             time.sleep(0.1)
         print "."
 except KeyboardInterrupt:
