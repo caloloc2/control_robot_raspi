@@ -21,7 +21,7 @@ def lee(pin):
     return GPIO.input(pin)
 
 def learn(pos):
-    if (sensors[pos]>0):
+    if (sensors[pos]>0.2):
         sensors[pos]-=0.2
 
 tipo = False # False:manual - True:automatico (se lee desde el GPIO 11)
