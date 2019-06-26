@@ -36,6 +36,14 @@ try:
                 time.sleep(sensors[0])
                 activa(5)
                 learn(0)
+            if (lee(10)): # sensor derecho
+                time.sleep(sensors[0])
+                activa(6)
+                learn(1)
+            if (lee(22)): # sensor central
+                time.sleep(sensors[0])
+                activa(13)
+                learn(2)
             tipo = lee(11)
             time.sleep(0.02)
         print "Modo Manual"
