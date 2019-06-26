@@ -5,3 +5,5 @@ GPIO.setup(17, GPIO.OUT) ## GPIO 17 como salida
 GPIO.setup(27, GPIO.OUT) ## GPIO 27 como salida
 
 print "si funca"
+
+GPIO.cleanup()
