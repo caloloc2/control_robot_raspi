@@ -24,11 +24,11 @@ try:
     while(True):
         tipo = lee(11)
         while(tipo):
-            print "automatico"
-            
+            print "Modo Automatico"
+
             tipo = lee(11)
             time.sleep(0.1)
-        print "."
+        print "Modo Manual"
 except KeyboardInterrupt:
     print "chao"
     GPIO.cleanup()
