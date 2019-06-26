@@ -10,21 +10,20 @@ GPIO.setup(10, GPIO.IN) ## GPIO 10 como entrada
 GPIO.setup(9, GPIO.IN) ## GPIO 9 como entrada
 GPIO.setup(11, GPIO.IN) ## GPIO 11 como entrada
 
-print "Inicio programa..."
+# definicion de funciones
 
-# GPIO.output(5, True)
-# GPIO.output(6, True)
-# GPIO.output(13, True)
+def activa(pin, estado):
+    GPIO.output(pin, estado)
 
-# GPIO.output(5, False)
-# GPIO.output(6, False)
-# GPIO.output(13, False)
+def lee(pin):
+    return GPIO.input(pin)
+
+tipo = False # False:manual - True:automatico (se lee desde el GPIO 11)
 
 while(True):
-    if (GPIO.input(11) == True):
-        print "presiona"
-    else:
-        print "suelto"
-    time.sleep(0.1)
+    tipo = lee(11)
+    while(tipo):
+        print "automatico"    
+        time.sleep(0.1)
 
 GPIO.cleanup()
