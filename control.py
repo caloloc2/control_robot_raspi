@@ -23,7 +23,7 @@ print "Inicio programa..."
 while(True):
     if (GPIO.input(11) == True):
         print "presiona"
-    else
+    else:
         print "suelto"
     time.sleep(0.1)
 
