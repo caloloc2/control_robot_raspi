@@ -37,11 +37,11 @@ try:
                 activa(5)
                 learn(0)
             if (lee(10)): # sensor derecho
-                time.sleep(sensors[0])
+                time.sleep(sensors[1])
                 activa(6)
                 learn(1)
             if (lee(22)): # sensor central
-                time.sleep(sensors[0])
+                time.sleep(sensors[2])
                 activa(13)
                 learn(2)
             tipo = lee(11)
