@@ -12,18 +12,19 @@ GPIO.setup(11, GPIO.IN) ## GPIO 11 como entrada
 
 print "Inicio programa..."
 
-ite = 0
-while ite<20:
-    GPIO.output(5, True)
-    GPIO.output(6, True)
-    GPIO.output(13, True)
-    time.sleep(0.5)
-    GPIO.output(5, False)
-    GPIO.output(6, False)
-    GPIO.output(13, False)
-    time.sleep(0.5)
-    ite += 2
+# GPIO.output(5, True)
+# GPIO.output(6, True)
+# GPIO.output(13, True)
 
-print "Fin programa."
+# GPIO.output(5, False)
+# GPIO.output(6, False)
+# GPIO.output(13, False)
+
+while(True):
+    if (GPIO.input(11) == True):
+        print "presiona"
+    else
+        print "suelto"
+    time.sleep(0.1)
 
 GPIO.cleanup()
