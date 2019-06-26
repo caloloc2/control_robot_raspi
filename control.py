@@ -20,10 +20,12 @@ def lee(pin):
 
 tipo = False # False:manual - True:automatico (se lee desde el GPIO 11)
 
-while(True):
-    tipo = lee(11)
-    while(tipo):
-        print "automatico"    
-        time.sleep(0.1)
-
-GPIO.cleanup()
+try:
+    while(True):
+        tipo = lee(11)
+        while(tipo):
+            print "automatico"    
+            time.sleep(0.1)
+except KeyboardInterrupt:
+    print "chao"
+    GPIO.cleanup()
